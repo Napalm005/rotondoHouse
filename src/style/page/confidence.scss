@@ -1,0 +1,77 @@
+/*
+   confidence style
+*/
+
+.confidence {
+    padding-top: 75px;
+    padding-bottom: 250px;
+    background-color: #f5f2e9;
+    position: relative;
+    @include adaptive('w999') {
+        padding-top: 45px;
+        padding-bottom: 180px;
+    }
+
+    &__title-h2 {
+        margin-bottom: 47px;
+    }
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        @include adaptive('w999') {
+            justify-content: center;
+        }
+    }
+    &__item {
+        width: 210px;
+        height: 210px;
+        background-color: $acc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 27px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include adaptive('w999') {
+            margin: 15px;
+        }
+        @include adaptive('w767') {
+            width: 145px;
+            height: 145px;
+        }
+        @include adaptive('w413') {
+            margin: 0;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+        &--alt {
+            background-color: $acc2;
+            .confidence__text {
+                background-color: $acc;
+            }
+        }
+    }
+    &__text {
+        text-align: center;
+        letter-spacing: 0.2px;
+        color: #fff;
+        font-size: 17px;
+        font-weight: 400;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $acc2;
+        @include adaptive('w767') {
+            width: 100px;
+            height: 100px;
+            font-size: 12px;
+        }
+    }
+}

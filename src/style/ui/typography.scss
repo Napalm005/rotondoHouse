@@ -1,0 +1,74 @@
+/*
+Typography style
+*/
+
+.typography {
+    p,
+    ul,
+    ol {
+        line-height: (30/14);
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 25px;
+        @include adaptive('w767') {
+            font-size: 12px;
+        }
+        ul {
+            margin-bottom: 0;
+        }
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: $acc;
+        position: relative;
+    }
+    h1,
+    h2,
+    h3 {
+        font-weight: bold;
+    }
+    h1 {
+        font-size: 55px;
+        margin-bottom: 27px;
+    }
+    h2 {
+        font-size: 25px;
+        margin-bottom: 27px;
+        font-weight: 500;
+        line-height: (28/18);
+        display: inline-block;
+        @include adaptive('w767') {
+            font-size: 16px;
+        }
+    }
+    h3 {
+        color: #024055;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: (27/18);
+        margin-bottom: 25px;
+        @include adaptive('w767') {
+            font-size: 14px;
+        }
+    }
+    h4 {
+        font-size: 16px;
+    }
+    a {
+        cursor: pointer;
+        color: $acc;
+        border-bottom: 1px solid;
+
+        &:hover {
+            border-color: transparent;
+            color: $acc;
+        }
+    }
+    img {
+        max-width: 100%;
+        float: none !important;
+        margin: 0 !important;
+    }
+}

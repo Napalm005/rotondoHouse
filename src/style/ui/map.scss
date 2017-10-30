@@ -1,0 +1,49 @@
+
+/*
+   map style
+*/
+.map {
+  width: 100%;
+  height: 635px;
+  margin-top: 44px;
+
+  @include adaptive('w767') {
+      height: 500px;
+  }
+}
+
+#map {
+    background-color: #bbbbbb;
+}
+
+.gm-style-iw + div {
+  top: 12px !important;
+}
+
+.gm-style-iw {
+  background: white;
+  padding: 10px;
+  overflow: hidden !important;
+  width: 350px !important;
+   // top: 12px !important;
+   // left: 12px !important;
+   background-color: #fff !important;
+   box-shadow: 0 0 22px 2px rgba(0, 0, 0, 0.08);
+   @include adaptive('w767') {
+      width: 280px !important;
+  }
+
+  div {
+    overflow: visible !important;
+  }
+}
+
+// .gm-style div:first-child div:nth-child(4) div:nth-child(4) div:nth-child(1) div:nth-child(1) {
+//    box-shadow: none !important;
+//      color: #024055 !important;
+//     font-size: 12px !important;
+//     font-weight: 400 !important;
+//     letter-spacing: -0.27px !important;
+//     line-height: 19px !important;
+// }
+

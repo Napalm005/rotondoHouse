@@ -1,0 +1,51 @@
+{
+    "places": [
+    {
+        "coordinates": {"lat": 45.02021957458174, "lng": 38.98373049999997},
+        "title": "Пятёрочка",
+        "icon": "img/map/place-main.png",
+        "img": "img/confidence/confidence-1.jpg",
+        "iconSize1": 100,
+        "iconSize2": 100
+    },
+    {
+        "coordinates": {"lat": 45.0251957458174, "lng": 38.96373049999997},
+        "title": "Аптека",
+        "icon": "img/map/place-train-station.png",
+        "img": "img/confidence/confidence-2.jpg",
+        "iconSize1": 70,
+        "iconSize2": 70
+    },
+    {
+        "coordinates": {"lat": 45.03021957458174, "lng": 38.97373049999997},
+        "title": "Детский мир",
+        "icon": "img/map/place-cafe.png",
+        "img": "img/confidence/confidence-3.jpg",
+        "iconSize1": 70,
+        "iconSize2": 70
+    },
+    {
+        "coordinates": {"lat": 45.01021957458174, "lng": 38.99373049999997},
+        "title": "Что-то нужной",
+        "icon": "img/map/place-shcool.png",
+        "img": "img/confidence/confidence-4.jpg",
+        "iconSize1": 70,
+        "iconSize2": 70
+    },
+    {
+        "coordinates": {"lat": 45.02021957458174, "lng": 38.99373049999997},
+        "title": "Что-то нужной",
+        "icon": "img/map/place-child.png",
+        "img": "img/confidence/confidence-5.jpg",
+        "iconSize1": 70,
+        "iconSize2": 70
+    },
+    {
+        "coordinates": {"lat": 45.01021957458174, "lng": 38.98373049999997},
+        "title": "Гипермаркет «Перекресток»",
+        "icon": "img/map/place-shop.png",
+        "img": "img/map/map-img-1.jpg",
+        "iconSize1": 70,
+        "iconSize2": 70
+    }]
+}

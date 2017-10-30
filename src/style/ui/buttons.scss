@@ -1,0 +1,35 @@
+/*
+   Buttons style
+*/
+
+.button {
+    font-size: 17px;
+    position: relative;
+    height: 40px;
+    min-width: 260px;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+    background: $acc;
+    color: #fff;
+    transition: all 0.3s ease;
+    &:hover {
+        background: darken($acc, 10%);
+    }
+    &__icon {
+        position: relative;
+        top: -4px;
+    }
+    &--alt {
+        height: 37px;
+        min-width: 229px;
+        line-height: 37px;
+    }
+    &__iconed {
+        position: relative;
+        top: 3px;
+        margin-right: 10px;
+        fill: #fff;
+        stroke: #fff;
+    }
+}

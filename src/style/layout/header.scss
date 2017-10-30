@@ -1,0 +1,59 @@
+/*
+   header style
+*/
+
+.header {
+    height: 73px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(#fff, 0.3);
+    z-index: 100;
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 120px;
+        height: 100%;
+        @include adaptive('w999') {
+            padding-left: 20px;
+        }
+        @include adaptive('w767') {
+            padding-left: 10px;
+        }
+    }
+    &__left {
+        width: 104px;
+        line-height: 0;
+    }
+    &__right {
+        width: 635px;
+        display: flex;
+        align-items: center;
+        @include adaptive('w999') {
+            width: auto;
+        }
+    }
+    &__logo {}
+    &__nav {
+        @include adaptive('w767') {
+            position: absolute;
+            top: 73px;
+            background-color: $acc2;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            display: none;
+        }
+    }
+    &__phone-block {
+        margin-left: 45px;
+        @include adaptive('w767') {
+            margin-left: 0;
+        }
+    }
+}

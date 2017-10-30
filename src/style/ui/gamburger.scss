@@ -1,0 +1,76 @@
+/*
+   gamburger style
+*/
+
+#gamburger {
+    display: none;
+    list-style: none;
+    width: 44px;
+    height: 32px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    top: 0px;
+    right: -4px;
+    margin-left: auto;
+    @include adaptive('w767') {
+        display: block;
+    }
+    span {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: $acc;
+        opacity: 1;
+        right: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+        right: 4px;
+        &:nth-child(1) {
+            top: 0px;
+            width: 36px;
+            transform-origin: left center;
+        }
+        &:nth-child(2) {
+            top: 10px;
+            width: 21px;
+            transform-origin: left center;
+        }
+        &:nth-child(3) {
+            top: 20px;
+            width: 26px;
+            transform-origin: left center;
+        }
+        &:nth-child(4) {
+            bottom: 0;
+            width: 36px;
+            transform-origin: left center;
+        }
+    }
+
+    &.open {
+        span:nth-child(1) {
+            width: 42px;
+            top: 0px;
+            right: -5px;
+            transform: rotate(45deg);
+        }
+        span:nth-child(2) {
+            width: 0%;
+            opacity: 0;
+        }
+        span:nth-child(3) {
+            width: 0%;
+            opacity: 0;
+        }
+        span:nth-child(4) {
+            width: 42px;
+            top: 30px;
+            right: -5px;
+            transform: rotate(-45deg);
+        }
+    }
+}
+

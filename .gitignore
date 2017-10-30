@@ -1,0 +1,17 @@
+/node_modules/*
+/data/*
+
+*.sublime-grunt.cache
+*.sublime-project
+*.sublime-workspace
+._*
+*.zip
+.cache
+.DS_Store
+.project
+.settings
+.tmproj
+Thumbs.db
+/bower_components/*
+.idea/
+/build/

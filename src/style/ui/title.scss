@@ -1,0 +1,45 @@
+/*
+   title style
+*/
+
+.title {
+    font-size: 31px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+}
+
+
+.title-h2 {
+    @include fontAlt();
+    position: relative;
+    font-size: 25px;
+    font-weight: 700;
+    padding-bottom: 14px;
+    margin-bottom: 35px;
+    text-align: center;
+    @include adaptive('w767') {
+        font-size: 19px;
+        margin-bottom: 20px;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2px;
+        width: 440px;
+        background-color: $acc2;
+        @include adaptive('w767') {
+            width: 150px;
+        }
+    }
+}
+
+.title-h3 {
+    color: $acc2;
+    color: #000000;
+    font-size: 21px;
+    font-weight: 700;
+}

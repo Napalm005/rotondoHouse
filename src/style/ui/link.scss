@@ -1,0 +1,17 @@
+/*
+   Link style
+   Add color link: .link.text-c-*
+*/
+
+.link {
+  cursor: pointer;
+	border-bottom: 1px solid;
+  display: inline-block;
+  font-size: 14px;
+  color: $acc;
+
+	&:hover {
+    color: darken($acc, 10%);
+    border-bottom: 1px solid;
+	}
+}

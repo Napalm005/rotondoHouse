@@ -1,0 +1,82 @@
+/********************
+ * FEATURE CAROUSEL *
+ ********************/
+.carousel-container {
+  position:relative;
+}
+#carousel {
+  height:480px;
+  position:relative;
+  @include adaptive('w999') {
+      height:415px;
+  }
+  @include adaptive('w767') {
+      height:300px;
+  }
+}
+.carousel-image {
+  border:0;
+  display:block;
+  height: 416px;
+  width: 687px;
+}
+.carousel-feature {
+  position:absolute;
+  top:-1000px;
+  left:-1000px;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.17);
+}
+.tracker-summation-container {
+  position:absolute;
+  color:white;
+  right:48px;
+  top:230px;
+  padding:3px;
+  margin:3px;
+  background-color:#000;
+}
+.tracker-individual-container {
+  position:absolute;
+  color:white;
+  right:48px;
+  top:210px;
+  padding:0;
+  margin:0;
+}
+.tracker-individual-container li {
+  list-style:none;
+}
+.tracker-individual-container .tracker-individual-blip {
+  margin:0 3px;
+  padding:0 3px;
+  color:white;
+  text-align:center;
+  background-color:#DDD;
+}
+.tracker-individual-container .tracker-individual-blip-selected {
+  color:white;
+  font-weight:bold;
+  background-color:#000;
+}
+#carousel-left {
+  position:absolute;
+  bottom:200px;
+  left:0;
+  cursor:pointer;
+  @include adaptive('w767') {
+      bottom:5px;
+      left: 50%;
+      transform: translateX(-150%);
+  }
+}
+#carousel-right {
+  position:absolute;
+  bottom:200px;
+  right:0;
+  cursor:pointer;
+  @include adaptive('w767') {
+      bottom:5px;
+      right: 50%;
+      transform: translateX(150%);
+  }
+}

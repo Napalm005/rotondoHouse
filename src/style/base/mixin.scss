@@ -1,0 +1,122 @@
+$base: #2b2a29;
+$acc: #368aaf;
+$acc2: #624c32;
+
+$font-size: 15px;
+
+$font: 'Caviar Dreams';
+$alt-font: 'Znikomit No 25';
+
+
+@mixin font {font-family: $font, Arial, sans-serif;}
+@mixin fontAlt {font-family: $alt-font, Georgia, serif;}
+
+@mixin hid {
+   visibility: hidden;
+   opacity: 0;
+   pointer-events: none;
+   transition-property: visibility,opacity;
+   transition-duration: 0.3s;
+}
+@mixin vis {
+   visibility: visible;
+   opacity: 1;
+   pointer-events: auto;
+}
+
+
+
+// ******************************* POINTS
+// @include adaptive('mobile | laptop | desktop | wide') {}
+
+$breakpoints: (
+  'w359': (max-width: 359px),
+  'w375': (max-width: 375px),
+  'w413': (max-width: 413px),
+  'w414': (max-width: 414px),
+  'w539': (max-width: 539px),
+  'w540': (max-width: 540px),
+  'w600': (max-width: 600px),
+  'w767': (max-width: 767px),
+  'w768': (max-width: 768px),
+  'w979': (max-width: 979px),
+  'w980': (max-width: 980px),
+  'w999': (max-width: 999px),
+  'w1023': (max-width: 1023px),
+  'w1024': (max-width: 1024px),
+  'w1199': (max-width: 1199px),
+  'w1200': (max-width: 1200px),
+  'w1279': (max-width: 1279px),
+  'w1280': (max-width: 1280px),
+  'w1440': (max-width: 1440px),
+) !default;
+
+@mixin adaptive($breakpoint) {
+// If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+// If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+    + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+// POINTS *******************************
+
+
+
+
+// =============================================================================
+// String Replace (вспомогательный миксин для font-face)
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "") {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+// $name - название для font-family
+// $path - путь к шрифту без формата
+// $weight - font-weight
+// $style - font-style
+// $exts - форматы шрифта, которые используются
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+
+    $extmods: (
+        eot: "?",
+        svg: "#" + str-replace($name, " ", "_")
+    );
+
+    $formats: (
+        otf: "opentype",
+        ttf: "truetype"
+    );
+
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}

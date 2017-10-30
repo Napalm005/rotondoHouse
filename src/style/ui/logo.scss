@@ -1,0 +1,13 @@
+/*
+   logo style
+*/
+
+.logo {
+    display: inline-block;
+    &__img {
+        @include adaptive('w767') {
+            height: 45px;
+            width: auto;
+        }
+    }
+}

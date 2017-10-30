@@ -1,0 +1,52 @@
+/*
+   gallery style
+*/
+
+.gallery {
+    position: relative;
+    padding-top: 5px;
+    &:before {
+        content: '';
+        position: absolute;
+        top: -150px;
+        right: -2%;
+        width: 104%;
+        height: 300px;
+        background-color: #fff;
+        transform: rotate(-9deg) skew(-9deg);
+        @include adaptive('w999') {
+            top: -125px;
+        }
+    }
+    .inner {
+        top: -75px;
+    }
+    &__title {
+        margin-bottom: 40px;
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        max-width: 700px;
+        margin: auto;
+        overflow: auto;
+        @include adaptive('w999') {
+            margin-bottom: 15px;
+        }
+    }
+    &__list-item {
+        list-style: none;
+        transition: 0.3s color;
+        font-size: 14px;
+        cursor: pointer;
+        border-bottom: 1px solid transparent;
+        transition: 0.3s border-color;
+        margin: 0 5px;
+        &:hover, &--active {
+            color: $acc2;
+            border-color: $acc2;
+        }
+    }
+}

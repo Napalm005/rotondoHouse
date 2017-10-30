@@ -1,0 +1,125 @@
+/*
+   parking style
+*/
+
+.parking {
+    margin-top: 70px;
+    margin-bottom: 177px;
+    height: 465px;
+    position: relative;
+    background-color: #cacfcb;
+    background-image: url('../img/parking/parking-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center ;
+    display: flex;
+    align-items: center;
+    @include adaptive('w999') {
+        padding-top: 10px;
+    }
+    @include adaptive('w767') {
+        margin-top: 40px;
+        margin-bottom: 110px;
+    }
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        top: -130px;
+        width: 54%;
+        height: 300px;
+        background-color: #ece5d3;
+        z-index: -1;
+        @include adaptive('w767') {
+            top: -70px;
+        }
+    }
+    &:before {
+        right: -2%;
+        transform: rotate(-9deg) skew(-9deg);
+    }
+    &:after {
+        left: -2%;
+        transform: rotate(9deg) skew(9deg);
+    }
+
+    &__mask {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            bottom: -130px;
+            width: 54%;
+            height: 300px;
+            background-color: #ece5d3;
+            z-index: -1;
+            @include adaptive('w767') {
+                bottom: -70px;
+            }
+        }
+        &:before {
+            left: -2%;
+            transform: rotate(-7deg) skew(-7deg);
+        }
+        &:after {
+            right: -2%;
+            transform: rotate(7deg) skew(7deg);
+        }
+    }
+    &__dash {
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(to right, black 22px, transparent 10px, transparent 32px);
+        background-size: 32px;
+        &--top {top: 0;}
+        &--bottom {bottom: 0;}
+    }
+    .inner {
+        max-width: 595px;
+        padding: 23px 70px;
+        background-color: rgba(#2b2a2a, 0.65);
+        @include adaptive('w767') {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+    &__title-h2 {
+        color: #fff;
+        font-weight: 400;
+        margin-bottom: 10px;
+        padding-bottom: 0;
+        text-shadow: -0.1px 0px 0px #fff, 0.1px 0px 0px #fff, 0px -0.1px 0px #fff, 0px 0.1px 0px #fff;
+        letter-spacing: 0.5px;
+        @include font();
+        &:after {
+            display: none;
+        }
+    }
+    &__button {
+        height: 35px;
+        line-height: 35px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 14px;
+    }
+    &__form {
+        max-width: 708px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+    }
+    .form__input {
+        margin-top: 7px;
+        width: calc(50% - 4px);
+        margin-right: 0;
+    }
+}

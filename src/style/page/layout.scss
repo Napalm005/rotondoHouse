@@ -1,0 +1,291 @@
+/*
+   layout style
+*/
+
+.layout {
+    position: relative;
+    padding-top: 50px;
+    @include adaptive('w767') {
+        padding-top: 25px;
+    }
+    &__title-h2 {
+        margin-bottom: 55px;
+    }
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 35px;
+        align-items: center;
+        @include adaptive('w999') {
+            width: 728px;
+            margin: auto;
+        }
+        @include adaptive('w767') {
+            flex-direction: column;
+            position: relative;
+            width: auto;
+            align-items: flex-start;
+            width: 300px;
+        }
+    }
+    &__left {
+        height: 492px;
+        width: 492px;
+        background-image: url('../img/layout/layout-house.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left;
+        position: relative;
+        left: -10px;
+        @include adaptive('w999') {
+            width: 315px;
+            height: 320px;
+        }
+        @include adaptive('w767') {
+            transform: scale(0.8);
+            left: -30px;
+        }
+    }
+    &__left-mask {
+        width: 100%;
+        height: 91px;
+        background-image: url('../img/layout/layout-section.png');
+        background-repeat: no-repeat;
+        background-position: left;
+        position: absolute;
+        left: 10px;
+        opacity: 0;
+        transition: 0.3s opacity;
+        @include adaptive('w999') {
+            background-size: contain;
+            width: 62%;
+            height: 58px;
+        }
+        &--1 {
+            bottom: 0%;
+        }
+        &--2 {
+            bottom: 10%;
+        }
+        &--3 {
+            bottom: 20%;
+        }
+        &--4 {
+            bottom: 30%;
+        }
+        &--5 {
+            bottom: 40%;
+        }
+        &--6 {
+            bottom: 50%;
+        }
+        &--7 {
+            bottom: 60%;
+        }
+        &--8 {
+            bottom: 70%;
+        }
+        &--active {
+            opacity: 1 !important;
+        }
+    }
+    &__section-wrap {
+        position: absolute;
+        left: 0;
+        display: flex;
+        &--1 {
+            bottom: 9%;
+            @include adaptive('w999') {
+                bottom: 5%;
+            }
+        }
+        &--2 {
+            bottom: 19%;
+        }
+        &--3 {
+            bottom: 29%;
+        }
+        &--4 {
+            bottom: 39%;
+        }
+        &--5 {
+            bottom: 49%;
+        }
+        &--6 {
+            bottom: 59%;
+        }
+        &--7 {
+            bottom: 69%;
+        }
+        &--8 {
+            bottom: 79%;
+        }
+    }
+    &__section {
+        z-index: 100;
+        cursor: pointer;
+        &--left {
+            width: 85px;
+            height: 40px;
+            transform-origin: right;
+            transform: rotate(-34deg) skew(-34deg);
+            @include adaptive('w999') {
+                width: 56px;
+                height: 25px;
+            }
+        }
+        &--right {
+            height: 45px;
+            width: 225px;
+            transform-origin: left;
+            transform: rotate(8deg) skew(8deg);
+            @include adaptive('w999') {
+                width: 146px;
+                height: 25px;
+            }
+        }
+    }
+    &__middle {
+        height: 415px;
+        width: 20px;
+        @include adaptive('w999') {
+            height: 330px;
+            position: relative;
+            left: 10px;
+        }
+        @include adaptive('w767') {
+            position: absolute;
+            height: 210px;
+            top: 63px;
+            right: 25px;
+            left: auto;
+            margin: auto;
+        }
+    }
+    &__range {
+        height: 100%;
+    }
+    &__right {
+        position: relative;
+        @include adaptive('w767') {
+            align-self: center;
+        }
+    }
+    &__room {
+        position: absolute;
+        width: 33.33%;
+        height: 33.33%;
+        transition: 0.3s background-color;
+        cursor: pointer;
+        margin: auto;
+        &--1 {
+            top: 0;
+            left: 0;
+        }
+        &--2 {
+            left: 0;
+            bottom: 0;
+        }
+        &--3 {
+            right: 0;
+            bottom: 0;
+        }
+        &--4 {
+            right: 0;
+            top: 0;
+        }
+        &--5 {
+            top: 0;
+            bottom: 0;
+            left: 0;
+        }
+        &--6 {
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        &--7 {
+            right: 0;
+            bottom: 0;
+            top: 0;
+        }
+        &--8 {
+            right: 0;
+            left: 0;
+            top: 0;
+        }
+        &--9 {
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+        &:hover {
+            background-color: rgba($acc,0.5);
+        }
+    }
+    &__scheme {
+        width: 400px;
+        height: 474px;
+        background-image: url('../img/layout/scheme-1.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        transition: 0.3s background-image;
+        position: relative;
+        right: -10px;
+        @include adaptive('w999') {
+            width: 350px;
+            height: 415px;
+        }
+        @include adaptive('w767') {
+            width: 250px;
+            height: 295px;
+            right: 0;
+        }
+    }
+    &__bottom {
+        height: 90px;
+        background-color: #ebe5d3;
+        @include adaptive('w767') {
+            height: auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .inner {
+            height: 100%;
+        }
+    }
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        @include adaptive('w767') {
+            flex-direction: column;
+        }
+    }
+    .form__input {
+        border: none;
+        border-bottom: 1px solid;
+        padding: 15px 0;
+        background-color: transparent;
+        font-size: 17px;
+        margin-right: 40px;
+        position: relative;
+        bottom: 8px;
+        @include adaptive('w767') {
+            margin-right: 0;
+        }
+
+        &::-webkit-input-placeholder {font-size: 16px;color:$base;font-weight: 700;}
+        &::-moz-placeholder          {font-size: 16px;color:$base;font-weight: 700;}/* Firefox 19+ */
+        &:-moz-placeholder           {font-size: 16px;color:$base;font-weight: 700;}/* Firefox 18- */
+        &:-ms-input-placeholder      {font-size: 16px;color:$base;font-weight: 700;}
+    }
+    &__button {
+        line-height: 36px;
+        height: 36px;
+    }
+}
+

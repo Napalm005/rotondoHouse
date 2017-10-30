@@ -1,0 +1,33 @@
+/*
+   form-block style
+*/
+
+.form-block {
+    padding-top: 16px;
+    padding-bottom: 25px;
+    position: relative;
+    background-color: $acc2;
+    &__title-h2 {
+        color: #fff;
+        font-weight: 400;
+        margin-bottom: 10px;
+        @include font();
+        @include adaptive('w767') {
+            padding-bottom: 0;
+        }
+    }
+    &__button {
+        height: 35px;
+        line-height: 35px;
+    }
+    &__form {
+        max-width: 708px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        @include adaptive('w767') {
+            flex-direction: column;
+        }
+    }
+}

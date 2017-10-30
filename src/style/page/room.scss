@@ -1,0 +1,85 @@
+/*
+   room style
+*/
+
+.room {
+    position: relative;
+    padding-top: 5px;
+    .inner {
+        background-image: url('../img/room/room-bg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        max-width: 100%;
+        padding-top: 140px;
+        padding-bottom: 140px;
+        @include adaptive('w767') {
+            background-position: center -30px;
+            padding-top: 55px;
+            padding-bottom: 65px;
+        }
+    }
+    &__title-h2 {
+        margin-bottom: 30px;
+        @include adaptive('w767') {
+            margin-bottom: 0;
+        }
+    }
+    &__items {
+        margin-top: 82px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 808px;
+        margin: auto;
+        text-align: center;
+    }
+    &__icon-wrap {
+        border: 5.5px solid #fff;
+        width: 66px;
+        height: 66px;
+        margin: auto;
+        margin-bottom: 10px;
+        @include adaptive('w767') {
+            height: 50px;
+            width: 50px;
+            border-width: 4px;
+        }
+    }
+    &__item {
+        width: calc(33.33% - 0.5px);
+        margin-bottom: 1px;
+        padding-top: 10px;
+        background-color: rgba(#17181c, 0.65);
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 14px;
+        height: 150px;
+        transition: 0.3s background-color;
+        @include adaptive('w767') {
+            width: calc(50% - 0.5px);
+            padding: 15px 15px 14px;
+            height: 140px;
+        }
+        &:hover {
+            background-color: rgba(#3689ae, 0.65);
+        }
+        &-icon {
+            margin: 7px;
+            @include adaptive('w767') {
+                height: 29px;
+                width: auto;
+            }
+        }
+        &-text {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 400;
+            text-shadow: -0.1px 0px 0px #fff, 0.1px 0px 0px #fff, 0px -0.1px 0px #fff, 0px 0.1px 0px #fff;
+            letter-spacing: 0.5px;
+            @include adaptive('w767') {
+                font-size: 15px;
+            }
+        }
+    }
+}

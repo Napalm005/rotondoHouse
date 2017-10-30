@@ -1,0 +1,95 @@
+/*
+   pay style
+*/
+
+.pay {
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 100px;
+    height: 490px;
+    padding-top: 54px;
+    background-image: url('../img/pay/pay-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include adaptive('w767') {
+        margin-bottom: 460px;
+    }
+    &__title-h2 {
+        margin-bottom: 70px;
+    }
+    &__title-h3 {
+        text-align: center;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    &__items {
+        margin-top: 82px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        @include adaptive('w767') {
+            margin-top: 55px;
+        }
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 25%;
+        margin-bottom: 35px;
+        text-align: center;
+        @include adaptive('w767') {
+            width: 50%;
+        }
+        &:hover {
+            .pay__item-icon {
+                fill: $acc;
+            }
+        }
+        &-icon {
+            transition: 0.3s fill;
+            margin-bottom: 12px;
+            height: 77px;
+            &--shift {
+                padding-right: 15px;
+            }
+        }
+        &-text {
+            color: #000000;
+            font-size: 21px;
+            font-weight: 700;
+            max-width: 160px;
+            text-shadow: -0.1px 0px 0px black, 0.1px 0px 0px black, 0px -0.1px 0px black, 0px 0.1px 0px black;
+            letter-spacing: 0.5px;
+            @include adaptive('w767') {
+                font-size: 18px;
+            }
+        }
+    }
+    &__form-block {
+        background-color: transparent;
+        position: relative;
+        top: 30px;
+        @include adaptive('w767') {
+            top: 50px;
+        }
+        .form-block__form {
+            padding-top: 31px;
+            padding-bottom: 26px;
+            padding-left: 15px;
+            padding-right: 15px;
+            background-color: $acc2;
+            max-width: 100%;
+        }
+        .form__input {
+            margin-right: 6px;
+        }
+    }
+    &__button {
+        min-width: 200px;
+        height: 35px;
+        line-height: 35px;
+    }
+}

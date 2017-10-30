@@ -1,0 +1,113 @@
+/*
+   Base selector
+ */
+
+html {
+    font-family: sans-serif;
+    min-height: 100%;
+    font-size: $font-size;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    &.no-scroll {
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
+body {
+    @include font;
+    &.no-scroll {
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    color: $base;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+}
+
+.main {
+    box-sizing: border-box;
+    position: relative;
+    min-height: 100vh;
+}
+
+.inner {
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+    position: relative;
+    @include adaptive('w999') {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @include adaptive('w767') {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+
+/* Global style */
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    background-color: transparent;
+}
+
+input,
+textarea,
+select,
+button {
+    -webkit-appearance: none;
+}
+
+p,
+ul,
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+img {
+    display: block;
+}
+
+
+/* Placeholder style */
+::-webkit-input-placeholder {font-size: 13px;line-height:1;color:#818080;opacity: 1; transition: opacity 0.3s ease;}
+::-moz-placeholder          {font-size: 13px;line-height:1;color:#818080;opacity: 1; transition: opacity 0.3s ease;}/* Firefox 19+ */
+:-moz-placeholder           {font-size: 13px;line-height:1;color:#818080;opacity: 1; transition: opacity 0.3s ease;}/* Firefox 18- */
+:-ms-input-placeholder      {font-size: 13px;line-height:1;color:#818080;opacity: 1; transition: opacity 0.3s ease;}
+
+:focus::-webkit-input-placeholder {opacity: 0;}
+:focus::-moz-placeholder          {opacity: 0;}/* Firefox 19+ */
+:focus:-moz-placeholder           {opacity: 0;}/* Firefox 18- */
+:focus:-ms-input-placeholder      {opacity: 0;}

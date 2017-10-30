@@ -1,0 +1,43 @@
+.footer {
+    height: 120px;
+    background-color: #2b2a28;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 90px;
+    @include adaptive('w999') {
+        padding-left: 0;
+    }
+    .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    &__link {
+      display: inline-block;
+      color: #ffffff;
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      padding-left: 26px;
+      position: relative;
+      @include adaptive('w767') {
+          font-size: 16px;
+          margin-bottom: 15px;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        background-image: url('../img/pdf.png');
+        width: 18px;
+        height: 23px;
+        @include adaptive('w767') {
+          top: -3px;
+        }
+      }
+    }
+}

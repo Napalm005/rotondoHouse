@@ -1,0 +1,61 @@
+.form {
+    &__input,
+    &__textarea {
+        padding: 7px 12px;
+        padding-bottom: 10px;
+        font-size: 13px;
+        font-weight: 400;
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid #b8b8b8;
+        margin-right: 20px;
+        @include adaptive('w767') {
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__input {
+        &--short {
+            max-width: 121px;
+            @include adaptive('w999') {
+                max-width: 90px;
+            }
+            @include adaptive('w767') {
+                max-width: 100%;
+            }
+        }
+        &--long {
+            min-width: 170px;
+        }
+    }
+
+    &__field._error,
+    &__field._success {
+        background-position: right 28px;
+        background-repeat: no-repeat;
+    }
+
+    &__field._error &__field_textarea,
+    &__field._success &__field_textarea {
+        background: none;
+    }
+
+    &__field._error {
+        border-color: #dd3e3e;
+    }
+
+    &__field._success {
+        border-color: $acc2;
+    }
+
+    &__field._error &__label {
+        color: #dd3e3e;
+    }
+
+    &__field._error &__input,
+    &__field._error &__textarea {
+        border-color: #D0011B;
+    }
+}
+

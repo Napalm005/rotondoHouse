@@ -1,0 +1,13 @@
+//slier
+.slider {
+    &__item {
+        height: 420px;
+        padding: 34px 84px;
+        background-size: cover;
+        @include adaptive('w767') {
+            height: auto;
+            min-height: 270px;
+            padding: 30px 60px;
+        }
+    }
+}

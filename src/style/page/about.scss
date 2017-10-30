@@ -1,0 +1,143 @@
+/*
+   about style
+*/
+
+.about {
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 100px;
+    &:before {
+        content: '';
+        position: absolute;
+        top: -150px;
+        right: -2%;
+        width: 104%;
+        height: 250px;
+        background-color: #f5f2e9;
+        transform: rotate(-9deg) skew(-9deg);
+        z-index: 1;
+        @include adaptive('w767') {
+            top: -135px;
+        }
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        right: -2%;
+        width: 104%;
+        height: 480px;
+        background-color: #f5f2e9;
+        transform: rotate(-9deg) skew(-9deg);
+        z-index: 1;
+        @include adaptive('w999') {
+            bottom: 100px;
+        }
+        @include adaptive('w767') {
+            bottom: 35px;
+        }
+    }
+    @include adaptive('w999') {
+        margin-bottom: 0;
+    }
+    &__title-h2 {
+        z-index: 2;
+    }
+    &__white-line {
+        position: absolute;
+        top: 50px;
+        right: -2%;
+        width: 104%;
+        height: 250px;
+        background-color: #fff;
+        transform: rotate(-9deg) skew(-9deg);
+        z-index: 0;
+        &--bottom {
+            top: auto;
+            bottom: -300px;
+            z-index: 10;
+            @include adaptive('w999') {
+                bottom: -156px;
+            }
+            @include adaptive('w767') {
+                bottom: -187px;
+            }
+        }
+    }
+    .inner {
+        top: -60px;
+        @include adaptive('w999') {
+            top: -90px;
+        }
+    }
+    p {
+        text-align: justify;
+        font-size: 16px;
+        color: #000;
+        text-indent: 20px;
+        @include adaptive('w999') {
+            font-size: 15px;
+        }
+        @include adaptive('w767') {
+            font-size: 13px;
+        }
+    }
+    &__content {
+        max-width: 550px;
+        z-index: 3;
+        position: relative;
+        margin-left: 35px;
+        @include adaptive('w767') {
+            margin-left: 0;
+        }
+    }
+    &__items {
+        margin-top: 82px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        @include adaptive('w999') {
+            width: 60vw;
+        }
+        @include adaptive('w767') {
+            width: 100%;
+            margin-top: 50px;
+        }
+    }
+    &__item {
+        width: 33.33%;
+        margin-bottom: 35px;
+        @include adaptive('w999') {
+            width: 50%;
+        }
+        &-icon {
+            margin-bottom: 15px;
+        }
+        &-text {
+            color: #000000;
+            font-size: 16px;
+            font-weight: 700;
+            max-width: 150px;
+            text-align: left !important;
+            text-indent: 0 !important;
+            text-shadow: -0.1px 0px 0px black, 0.1px 0px 0px black, 0px -0.1px 0px black, 0px 0.1px 0px black;
+            letter-spacing: 0.5px;
+        }
+    }
+    &__girl {
+        position: absolute;
+        right: 0;
+        top: 120px;
+        z-index: 2;
+        @include adaptive('w999') {
+            width: 450px;
+            height: 450px;
+            top: 245px;
+            right: 20px;
+        }
+        @include adaptive('w767') {
+            display: none;
+        }
+    }
+}
