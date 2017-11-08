@@ -28,14 +28,6 @@ gulp.task('webserver', function () {
 	browserSync(config);
 });
 var path = {
-	public: {
-		js: '../public/js/',
-		json: '../public/json/',
-		css: '../public/css/',
-		// inlineStyle: '../public/css/inline/',
-		img: '../public/img/',
-		fonts: '../public/fonts/'
-	},
 	build: {
 		html: 'build/',
 		js: 'build/js/',
@@ -73,7 +65,6 @@ var path = {
 	clean: './build',
 	remove : {
 		build : './build',
-		public : '../public',
 		modules : './node_modules'
 	}
 };
@@ -96,7 +87,6 @@ gulp.task('clean', function (cb) {
 gulp.task('remove', function (cb) {
 	rimraf(path.remove.modules, cb);
 	rimraf(path.remove.build, cb);
-	rimraf(path.remove.public, cb);
 });
 
 gulp.task('html:build', function () {
@@ -113,21 +103,17 @@ gulp.task('js:build', function () {
 	.pipe(plumber())
 	.pipe(concat("scripts.js"))
 	.pipe(gulp.dest(path.build.js))
-	.pipe(gulp.dest(path.public.js))
 	.pipe(uglify())
 	.pipe(rename("scripts.min.js"))
-	.pipe(gulp.dest(path.public.js))
 	.pipe(gulp.dest(path.build.js))
 
 	gulp.src(path.src.js_vendor)
 	.pipe(include())
 	.pipe(plumber())
 	.pipe(concat("vendors.js"))
-	.pipe(gulp.dest(path.public.js))
 	.pipe(gulp.dest(path.build.js))
 	.pipe(uglify())
 	.pipe(rename('vendors.min.js'))
-	.pipe(gulp.dest(path.public.js))
 	.pipe(gulp.dest(path.build.js))
 
 	.pipe(reload({stream: true}));
@@ -137,7 +123,6 @@ gulp.task('json:build', function() {
 	gulp.src(path.src.json)
 	.pipe(plumber())
 	.pipe(gulp.dest(path.build.json))
-	.pipe(gulp.dest(path.public.json));
 });
 
 gulp.task('style:build', function () {
@@ -161,12 +146,11 @@ gulp.task('style:build', function () {
 	}))
 	.pipe(prefixer({browsers: ['last 16 versions']}))
 	.pipe(gcmq())
-	.pipe(gulp.dest(path.public.css))
+	.pipe(sourcemaps.write())
 	.pipe(gulp.dest(path.build.css))
 	.pipe(reload({stream: true}))
 	.pipe(cssmin())
 	.pipe(rename('style.min.css'))
-	.pipe(gulp.dest(path.public.css))
 	.pipe(gulp.dest(path.build.css));
 });
 
@@ -184,7 +168,6 @@ gulp.task('inline-css:build', function () {
 	.pipe(gcmq())
 	.pipe(cssmin())
 	.pipe(rename('inline.html'))
-	// .pipe(gulp.dest(path.public.css))
 	.pipe(gulp.dest(path.build.inlineStyle))
 	.pipe(reload({stream: true}));
 });
@@ -205,7 +188,6 @@ gulp.task('inline-css:build', function () {
 // 	}))
 // 	.pipe(rename({prefix: 'icon-'}))
 // 	.pipe(svgstore())
-// 	.pipe(gulp.dest(path.public.img))
 // 	.pipe(gulp.dest(path.build.img))
 // 	.pipe(reload({stream: true}));
 // });
@@ -230,7 +212,6 @@ gulp.task('svg', function () {
       }))
       .pipe(rename({prefix: 'icon-'}))
       .pipe(svgstore())
-      .pipe(gulp.dest(path.public.img))
       .pipe(gulp.dest(path.build.img))
 			.pipe(reload({stream: true}));
 });
@@ -243,14 +224,12 @@ gulp.task('image:build', function () {
 		use: [pngquant()],
 		interlaced: true
 	}))
-	.pipe(gulp.dest(path.public.img))
 	.pipe(gulp.dest(path.build.img))
 	.pipe(reload({stream: true}));
 });
 
 gulp.task('fonts:build', function() {
 	gulp.src(path.src.fonts)
-	.pipe(gulp.dest(path.public.fonts))
 	.pipe(gulp.dest(path.build.fonts))
 });
 
